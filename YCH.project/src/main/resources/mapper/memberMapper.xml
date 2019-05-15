@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ych.member.service.MemberMapper" >
+
+
+	<select id="selectMemberList" parameterType="String" resultType="kr.or.ych.member.service.MemberVo">
+		    
+		SELECT
+		    seq_no,
+		    usr_id,
+		    usr_pwd,
+		    usr_name,
+		    usr_email,
+		    usr_hp,
+		    usr_gender,
+		    usr_age,
+		    usr_ip,
+		    del_at,
+		    reg_user,
+		    reg_dt,
+		    upd_user,
+		    upd_dt
+		FROM
+		    tb_ych_member
+		WHERE
+			seq_no = #{seqNo}
+		    
+			
+			
+	
+	
+	</select>
+
+
+
+	<insert id="insertMemberInfo" parameterType="kr.or.ych.member.service.MemberVo">
+
+
+		INSERT INTO tb_ych_member (
+		    seq_no,
+		    usr_id,
+		    usr_pwd,
+		    usr_name,
+		    usr_email,
+		    usr_hp,
+		    usr_gender,
+		    usr_age,
+		    usr_ip,
+		    del_at,
+		    reg_user,
+		    reg_dt,
+		    upd_user,
+		    upd_dt
+		) VALUES (
+		    SEQ_TB_YCH_MEMBER.NEXTVAL,
+		    #{usrId},
+		    #{usrPwd},
+		    #{usrName},
+		    #{usrEmail},
+		    #{usrHp},
+		    #{usrGender},
+		    #{usrAge},
+		    #{usrIp},
+		    'N',
+		    #{usrId},
+		    sysdate,
+		    #{usrId},
+		    sysdate
+		)
+	
+	
+	
+	</insert>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>
