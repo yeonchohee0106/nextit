@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.or.ych.member.service.MemberMapper;
+import kr.or.ych.member.service.MemberSearchVo;
 import kr.or.ych.member.service.MemberService;
 import kr.or.ych.member.service.MemberVo;
 
@@ -14,20 +15,27 @@ import kr.or.ych.member.service.MemberVo;
 public class MemberServiceImpl implements MemberService{
 
 	@Autowired
-	private MemberMapper mapper;
+	private MemberMapper memberMapper;
 	
 	@Override
 	public void insertMemberInfo(MemberVo memberVo) throws Exception {
 		
-			mapper.insertMemberInfo(memberVo);
+		memberMapper.insertMemberInfo(memberVo);
 	}
 	
 	
 	@Override
-	public MemberVo selectMemberList(String seqNo) throws Exception {
+	public List<MemberVo> selectMemberList(MemberSearchVo searchVo) throws Exception {
 
-		MemberVo memberVo = mapper.selectMemberList(seqNo);
+		List<MemberVo> memberList = memberMapper.selectMemberList(searchVo);
 		
-		return memberVo;
+		return memberList;
+	}
+
+
+	@Override
+	public MemberVo getLoginInfo(MemberVo memberVo) throws Exception {
+
+		return memberMapper.getLoginInfo(memberVo);
 	}
 }

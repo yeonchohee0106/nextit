@@ -28,6 +28,10 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 
+	
+	
+	
+	
 	/**
 	 * 회원가입 페이지(View)
 	 * 
@@ -40,6 +44,8 @@ public class MemberController {
 		return "member/memberInsertFront";
 	}
 
+	
+	
 	/**
 	 * 회원가입(Proc)
 	 * @param modelAndView
@@ -92,16 +98,52 @@ public class MemberController {
 			) throws Exception{
 		
 		
+		List<MemberVo> memberList = memberService.selectMemberList(searchVo);
+
+		model.addAttribute("memberList", memberList);
 		
-		MemberVo memberVo = memberService.selectMemberList(searchVo.getSeqNo());
-		model.addAttribute("memberList", memberVo);
-		
-		log.debug("memberList {} :", memberVo);
-		log.debug("memberList {} :", memberVo);
-		log.debug("memberList {} :", memberVo);
+		log.debug("memberList {} :", memberList);
+		log.debug("memberList {} :", memberList);
+		log.debug("memberList {} :", memberList);
 		
 		log.debug("searchVo {} :", searchVo);
 		
 		return "member/memberList";
 	}
+	
+	
+	
+	/**
+	 * 로그인 페이지 보여주기 
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/loginFront.ch")
+	public String loginFront() throws Exception {
+		
+		return "member/loginFront";
+	}
+	
+	
+	@RequestMapping(value="loginProc.ch")
+	public String loginProc(
+				Model model, 
+				@ModelAttribute MemberVo memberVo
+			) throws Exception {
+	
+		memberVo = memberService.getLoginInfo(memberVo);
+		
+		log.debug("getLoginInfo : {}", memberVo);
+		log.debug("getLoginInfo : {}", memberVo);
+		log.debug("getLoginInfo : {}", memberVo);
+		
+		if(memberVo != null) {
+			model.addAttribute("loginInfo", memberVo);
+			
+		}
+		
+		
+		return "member/loginFront";
+	}
+	
 }

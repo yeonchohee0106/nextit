@@ -16,10 +16,32 @@
 
 <title>Business Casual - Start Bootstrap Theme</title>
 
-
 </head>
 
 <body>
+
+
+	${loginInfo }
+
+	<form action="/member/loginProc.ch" method="post">
+		<table class="table">
+
+			<tr>
+				<th>아이디</th>
+				<td><input type="text" class="form-control" name="usrId"></td>
+			</tr>
+			<tr>
+				<th>비밀번호</th>
+				<td><input type="password" class="form-control" name="usrPwd"></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<button type="submit" class="form-control">로그인</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+
 
 
 </body>

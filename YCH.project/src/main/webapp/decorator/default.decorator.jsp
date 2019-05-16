@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ page session="false"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,11 +14,12 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>회원목록^^</title>
+<title><sitemesh:write property='title'/></title>
 
 <!-- Bootstrap core CSS -->
 <link type="text/css"
-	href="/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+	href="/resources/vendor/bootstrap/css/bootstrap.css"
+	rel="stylesheet">
 
 <!-- Custom fonts for this template -->
 <link
@@ -29,9 +30,10 @@
 	rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link type="text/css" href="/resources/css/business-casual.css"
+<link type="text/css"
+	href="/resources/css/business-casual.css"
 	rel="stylesheet">
-
+<sitemesh:write property='head'/>
 </head>
 
 <body>
@@ -56,11 +58,14 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav mx-auto">
 					<li class="nav-item active px-lg-4"><a
-						class="nav-link text-uppercase text-expanded" href="loginFront.ch">MAIN</a></li>
+						class="nav-link text-uppercase text-expanded" href="/">MAIN</a>
+					</li>
 					<li>
-					<li class="nav-item px-lg-4"><a
+					<li class="nav-item px-lg-4">
+					<a
 						class="nav-link text-uppercase text-expanded"
-						href="memberFront.ch">회원가입 <!-- <span class="sr-only">(current)</span> -->
+						href="memberFront.ch">회원가입 
+						<!-- <span class="sr-only">(current)</span> -->
 					</a></li>
 					<li class="nav-item px-lg-4"><a
 						class="nav-link text-uppercase text-expanded" href="memberList.ch">회원목록</a>
@@ -78,59 +83,20 @@
 
 
 	<section class="page-section cta">
-		<!-- <div class="container"> -->
-			<!-- <div class="row"> -->
-				<div class="col-xl-8 mx-auto">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-9 mx-auto">
 					<div class="cta-inner text-center rounded">
-
-
-
-
-
-						<h3>회원목록</h3>
-						<table class="table">
-							<thread>
-							<tr>
-								<th>번호</th>
-								<th>아이디</th>
-								<th>이름</th>
-								<th>비밀번호</th>
-								<th>성별</th>
-								<th>전화번호</th>
-								<th>이메일</th>
-								<th>아이피</th>
-								<th>가입일</th>
-							</tr>
-							</thread>
-							<tbody>
-								<c:forEach var="memberVo" items="${memberList}">
-									<tr>
-										<td>${memberVo.seqNo }</td>
-										<td>${memberVo.usrId }</td>
-										<td>${memberVo.usrName }</td>
-										<td>${memberVo.usrPwd }</td>
-										<td>${memberVo.usrGender }</td>
-										<td>${memberVo.usrHp }</td>
-										<td>${memberVo.usrEmail }</td>
-										<td>${memberVo.usrIp }</td>
-										<td>${memberVo.regDt }</td>
-									</tr>
-
-								</c:forEach>
-							</tbody>
-						</table>
-
-
-
-
-
-
-
-
+					템플릿~!
+					<sitemesh:write property='body'/>
+					
+					
+					
+					
 					</div>
 				</div>
-			<!-- </div> -->
-		<!-- </div> -->
+			</div>
+		</div>
 	</section>
 
 	<footer class="footer text-faded text-center py-5">

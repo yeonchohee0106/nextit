@@ -154,6 +154,7 @@ p {
   padding: 3rem;
   margin: 0.5rem;
   background-color: rgba(255, 255, 255, 0.85);
+  width: 1000px;
 }
 
 .cta .cta-inner:before {

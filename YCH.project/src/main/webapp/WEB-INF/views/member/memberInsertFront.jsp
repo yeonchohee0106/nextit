@@ -65,7 +65,7 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav mx-auto">
 					<li class="nav-item active px-lg-4"><a
-						class="nav-link text-uppercase text-expanded" href="/">MAIN</a>
+						class="nav-link text-uppercase text-expanded" href="loginFront.ch">MAIN</a></li>
 					</li>
 					<li>
 					<li class="nav-item px-lg-4">

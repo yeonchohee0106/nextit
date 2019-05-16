@@ -3,8 +3,7 @@
 <mapper namespace="kr.or.ych.member.service.MemberMapper" >
 
 
-	<select id="selectMemberList" parameterType="String" resultType="kr.or.ych.member.service.MemberVo">
-		    
+	<select id="getLoginInfo" parameterType="kr.or.ych.member.service.MemberVo" resultType="kr.or.ych.member.service.MemberVo">
 		SELECT
 		    seq_no,
 		    usr_id,
@@ -23,9 +22,35 @@
 		FROM
 		    tb_ych_member
 		WHERE
-			seq_no = #{seqNo}
-		    
+			usr_id = #{usrId}
+		  AND
+		    usr_pwd = #{usrPwd}
 			
+		
+		
+	
+	</select>
+
+	<select id="selectMemberList" parameterType="kr.or.ych.member.service.MemberSearchVo" resultType="kr.or.ych.member.service.MemberVo">
+		    
+		SELECT
+		    seq_no,
+		    usr_id,
+		    usr_pwd,
+		    usr_name,
+		    usr_email,
+		    usr_hp,
+		    usr_gender,
+		    usr_age,
+		    usr_ip,
+		    del_at,
+		    reg_user,
+		    reg_dt,
+		    upd_user,
+		    upd_dt
+		FROM
+		    tb_ych_member
+		
 			
 	
 	
