@@ -3,9 +3,6 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +14,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title><sitemesh:write property='title'/></title>
+<title>Business Casual - Start Bootstrap Theme</title>
 
 <!-- Bootstrap core CSS -->
 <link type="text/css"
@@ -36,7 +33,7 @@
 <link type="text/css"
 	href="/resources/css/business-casual.css"
 	rel="stylesheet">
-<sitemesh:write property='head'/>
+
 </head>
 
 <body>
@@ -67,11 +64,11 @@
 					<li class="nav-item px-lg-4">
 					<a
 						class="nav-link text-uppercase text-expanded"
-						href="/member/memberFront.ch">회원가입 
+						href="memberFront.ch">회원가입 
 						<!-- <span class="sr-only">(current)</span> -->
 					</a></li>
 					<li class="nav-item px-lg-4"><a
-						class="nav-link text-uppercase text-expanded" href="/member/memberList.ch">회원목록</a>
+						class="nav-link text-uppercase text-expanded" href="memberList.ch">회원목록</a>
 					</li>
 					<li class="nav-item px-lg-4"><a
 						class="nav-link text-uppercase text-expanded" href="boardList.ch">게시판목록</a>
@@ -86,16 +83,20 @@
 
 
 	<section class="page-section cta">
+		<div class="container">
+			<div class="row">
 				<div class="col-xl-9 mx-auto">
 					<div class="cta-inner text-center rounded">
-					템플릿~!
-
-
-					  <sitemesh:write property='body'/>
-
+					
+					
+					
+					
+					
 					
 					</div>
 				</div>
+			</div>
+		</div>
 	</section>
 
 	<footer class="footer text-faded text-center py-5">
