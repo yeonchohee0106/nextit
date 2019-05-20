@@ -74,7 +74,7 @@
 						class="nav-link text-uppercase text-expanded" href="/member/memberList.ch">회원목록</a>
 					</li>
 					<li class="nav-item px-lg-4"><a
-						class="nav-link text-uppercase text-expanded" href="boardList.ch">게시판목록</a>
+						class="nav-link text-uppercase text-expanded" href="/board/boardList.ch">게시판목록</a>
 					</li>
 					<li class="nav-item px-lg-4"><a
 						class="nav-link text-uppercase text-expanded" href="store.html">Store</a>
@@ -88,7 +88,6 @@
 	<section class="page-section cta">
 				<div class="col-xl-9 mx-auto">
 					<div class="cta-inner text-center rounded">
-					템플릿~!
 
 
 					  <sitemesh:write property='body'/>
